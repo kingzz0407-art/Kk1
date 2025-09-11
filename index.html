@@ -1,115 +1,18 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我们的故事</title>
-  <style>
-    body {
-      font-family: "Microsoft YaHei", sans-serif;
-      background: #fdfdfd;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    .timeline {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-    .event {
-      margin: 20px 0;
-      padding: 15px 20px;
-      background: #fff;
-      border-left: 5px solid #ff4d4f;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .event h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #333;
-    }
-    .event span {
-      font-size: 14px;
-      color: #999;
-    }
-    .event p {
-      margin: 5px 0 0;
-      color: #555;
-    }
-    /* 音乐按钮 */
-    #music-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff4d4f;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-    #music-btn:hover {
-      background: #ff7875;
-    }
-  </style>
-</head>
-<body>
-  <div class="timeline">
-    <div class="event">
-      <h3>初遇 <span>— 2025.04.25</span></h3>
-      <p>第一次在 IG 私聊。</p>
-    </div>
-    <div class="event">
-      <h3>加到微信 <span>— 2025.06.16</span></h3>
-      <p>因為說要給妳發語音唱歌，加到了妳的微信。</p>
-    </div>
-    <div class="event">
-      <h3>第一次清唱 <span>— 2025.06.17</span></h3>
-      <p>應你要求，清唱薛之謙的〈其實〉。</p>
-    </div>
-    <div class="event">
-      <h3>熬夜聊天 <span>— 2025.07.06</span></h3>
-      <p>聊了妳同事的趣事，一直聊到凌晨兩點。</p>
-    </div>
-    <div class="event">
-      <h3>告白的夜晚 <span>— 2025.08.03</span></h3>
-      <p>藉著酒意，第一次對妳說了「我喜歡妳」。</p>
-    </div>
-    <div class="event">
-      <h3>信任值滿級 <span>— 2025.09.01</span></h3>
-      <p>正式達到信任值 Lv.5。</p>
-    </div>
-  </div>
-
-  <!-- 背景音乐 -->
-  <audio id="bg-music" loop>
-    <source src="https://raw.githubusercontent.com/kingzz0407-art/Kk1/main/%E6%97%A0%E6%A0%87%E9%A2%98%E8%A7%86%E9%A2%91%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8Clipchamp%E5%88%B6%E4%BD%9C.m4a" type="audio/mpeg">
-    你的浏览器不支持播放音乐
-  </audio>
-
-  <button id="music-btn">▶️ 播放音乐</button>
-
-  <script>
-    const music = document.getElementById("bg-music");
-    const btn = document.getElementById("music-btn");
-
-    let playing = false;
-
-    btn.addEventListener("click", () => {
-      if (!playing) {
-        music.play();
-        btn.textContent = "⏸ 暂停音乐";
-        playing = true;
-      } else {
-        music.pause();
-        btn.textContent = "▶️ 播放音乐";
-        playing = false;
-      }
-    });
-  </script>
-</body>
-</html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>我們的信任旅程（時間軸樣式）</title>
+<style>
+  :root{
+    --bg:#fafafa;
+    --card:#ffffff;
+    --accent:#ff6b6b;
+    --muted:#9aa3af;
+    --text:#222;
+    --dot:#ef6a6a;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC","Helvetica Neue",Arial;color:var(--text)}
+  .frame{max-width:760px;margin:20px auto;padding:18px}
+  .card{background:var(--card
