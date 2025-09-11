@@ -15,4 +15,212 @@
   }
   html,body{height:100%;margin:0;background:var(--bg);font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC","Helvetica Neue",Arial;color:var(--text)}
   .frame{max-width:760px;margin:20px auto;padding:18px}
-  .card{background:var(--card
+  .card{background:var(--card);border-radius:12px;box-shadow:0 10px 30px rgba(20,20,20,0.06);overflow:hidden}
+  header{padding:20px 22px;background:linear-gradient(90deg,#ffd7df,#fff1f3);color:#8b2d3d}
+  header h1{margin:0;font-size:18px}
+  header p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+
+  /* 信任值 */
+  .trust{padding:18px}
+  .trust h2{margin:0 0 12px;color:var(--accent);font-size:16px}
+  .hearts{display:flex;gap:10px;align-items:center}
+  .heart{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#f3f4f6;cursor:pointer;transition:all .22s;font-size:18px}
+  .heart.active{background:linear-gradient(120deg,#ffd1d1,#ff8a8a);color:white;transform:scale(1.12);box-shadow:0 8px 20px rgba(255,110,110,0.15)}
+  .labels{display:flex;gap:16px;margin-top:8px;font-size:12px;color:var(--muted)}
+
+  /* timeline */
+  .timeline{padding:18px 22px;background:linear-gradient(180deg,#ffffff,#fbfdff)}
+  .timeline-list{padding:12px 0 18px;max-width:720px;margin:0 auto}
+  .timeline-item{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #f0f2f4}
+  .timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--dot);flex:0 0 22px;margin-top:6px}
+  .timeline-body{flex:1}
+  .timeline-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .timeline-title{font-weight:700;color:#222;font-size:15px}
+  .timeline-date{font-size:13px;color:var(--muted);white-space:nowrap}
+  .timeline-desc{margin-top:6px;color:#6f7a86;font-size:13px;line-height:1.35}
+
+  /* footer / message */
+  .message{padding:18px;background:#fffaf0}
+  .message h3{margin:0 0 8px;color:#c2511a}
+  .message p{margin:6px 0;color:#333}
+
+  /* 音乐按钮 */
+  #music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 30px;
+    animation: float 2s ease-in-out infinite;
+    transition: background 0.3s;
+  }
+  #music-btn:hover {
+    background: #ff7875;
+  }
+  @keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+  }
+
+  @media (max-width:420px){
+    .frame{margin:8px}
+    .timeline-item{padding:12px 0}
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="card">
+      <header>
+        <h1>給 珈綺 的小小紀念</h1>
+        <p>From Kingsley · 2025</p>
+      </header>
+
+      <!-- 信任值 -->
+      <div class="trust">
+        <h2>珈綺的信任值</h2>
+        <div class="hearts" id="hearts">
+          <div class="heart" data-i="1">1</div>
+          <div class="heart" data-i="2">2</div>
+          <div class="heart" data-i="3">3</div>
+          <div class="heart" data-i="4">4</div>
+          <div class="heart" data-i="5">5</div>
+        </div>
+        <div class="labels"><div>1級-陌生</div><div>2級-熟識</div><div>3級-了解</div><div>4級-信任</div><div>5級-滿級</div></div>
+      </div>
+
+      <!-- 時間軸 -->
+      <section class="timeline">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <div class="timeline-title">初遇</div>
+                <div class="timeline-date">2025.04.25</div>
+              </div>
+              <div class="timeline-desc">第一次在 IG 私聊。</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <div class="timeline-title">加到微信</div>
+                <div class="timeline-date">2025.06.16</div>
+              </div>
+              <div class="timeline-desc">因為說要給妳發語音唱歌，加到了妳的微信。</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <div class="timeline-title">第一次清唱</div>
+                <div class="timeline-date">2025.06.17</div>
+              </div>
+              <div class="timeline-desc">應你要求，唱了一段薛之謙的〈其實〉。</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <div class="timeline-title">熬夜聊八卦</div>
+                <div class="timeline-date">2025.07.06</div>
+              </div>
+              <div class="timeline-desc">和妳聊了同事的趣事，那天我們聊到凌晨兩點多。</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <div class="timeline-title">告白的夜晚</div>
+                <div class="timeline-date">2025.08.03</div>
+              </div>
+              <div class="timeline-desc">藉著酒勁，第一次對妳說了「我喜歡妳」。</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <div class="timeline-title">信任值滿級</div>
+                <div class="timeline-date">2025.09.01</div>
+              </div>
+              <div class="timeline-desc">正式達到 5 級，屬於我們的里程碑。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 感謝寄語 -->
+      <div class="message">
+        <h3>感謝與寄語</h3>
+        <p>謝謝妳在我唱歌時願意聽，哪怕只是清唱。</p>
+        <p>謝謝妳願意分享生活的小片段，連同事的八卦都成了我們的默契。</p>
+        <p>謝謝妳在深夜裡還願意陪我聊天，讓我覺得孤單都變得很遠。</p>
+        <p>謝謝妳接住了我的告白，雖然現在的妳並沒有說也喜歡我，但妳的不抗拒，是我勇敢的動力。</p>
+        <p style="margin-top:8px;font-weight:700">—— 珈綺</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 背景音乐 -->
+  <audio id="bg-music" loop>
+    <source src="https://raw.githubusercontent.com/kingzz0407-art/Kk1/main/%E6%97%A0%E6%A0%87%E9%A2%98%E8%A7%86%E9%A2%91%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8Clipchamp%E5%88%B6%E4%BD%9C.m4a" type="audio/mpeg">
+    你的瀏覽器不支持音樂播放
+  </audio>
+
+  <!-- 音乐按钮 -->
+  <button id="music-btn">🎵</button>
+
+<script>
+  // 信任值互動
+  document.querySelectorAll('.heart').forEach(h=>{
+    h.addEventListener('click', ()=>{
+      const i = Number(h.dataset.i);
+      document.querySelectorAll('.heart').forEach(x=>{
+        const idx = Number(x.dataset.i);
+        if(idx <= i){ x.classList.add('active'); x.textContent='❤'; }
+        else{ x.classList.remove('active'); x.textContent=''+idx; }
+      });
+    });
+  });
+
+  // 背景音乐控制
+  const music = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+  let playing = false;
+
+  btn.addEventListener("click", () => {
+    if (!playing) {
+      music.play();
+      btn.textContent = "🔇";
+      playing = true;
+    } else {
+      music.pause();
+      btn.textContent = "🎵";
+      playing = false;
+    }
+  });
+</script>
+</body>
+</html>
